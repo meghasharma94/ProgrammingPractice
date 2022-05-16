@@ -17,45 +17,36 @@ import java.util.*;
 public class GroupAnagram {
 
 
-    public static List<List<String>> groupAnagrams(String[] strs) {
+    private static List<List<String>> groupAnagrams(String[] strs) {
 
-        Map<String,List<String>> map=new HashMap<String,List<String>>();
-        List<List<String>> finalList=new ArrayList<List<String>>();
+        Map<String, List<String>> map = new HashMap<String, List<String>>();
+        List<List<String>> finalList = new ArrayList<List<String>>();
 
-            for(String s: strs){
-                char[] chars= s.toCharArray();
-                Arrays.sort(chars);
-                String newWord = new String(chars);
-                if( map.containsKey(newWord)){
-                     map.get(newWord).add(s);  }
-                else{
-                    List<String> word=new ArrayList<String>();
-                    word.add(s);
-                    map.put(newWord,word);
-                }
+        for (String s : strs) {
+            char[] chars = s.toCharArray();
+            Arrays.sort(chars);
+            String newWord = new String(chars);
+            if (map.containsKey(newWord)) {
+                map.get(newWord).add(s);
+            } else {
+                List<String> word = new ArrayList<String>();
+                word.add(s);
+                map.put(newWord, word);
             }
-
+        }
         for (String s : map.keySet()) {
             finalList.add(map.get(s));
-            }
-
-         return finalList;
-
+        }
+        return finalList;
     }
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        String[] group = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        List<List<String>> anagramGroup = groupAnagrams(group);
 
-
-    String[]  group= {"eat","tea","tan","ate","nat","bat"};
-    List<List<String>> anagramGroup=groupAnagrams(group);
-
-    for(List<String> list:anagramGroup ){
-
-        System.out.println(list);
-    }
-
-
-
+        for (List<String> list : anagramGroup) {
+            System.out.println(list);
+        }
     }
 }

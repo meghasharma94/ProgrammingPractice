@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.util.*;
 
 public class HeapSort {
-
-
     private final static int HEAP_SIZE = 10; //size of heap
 
     static class maxHeapComparator implements Comparator<Integer> {

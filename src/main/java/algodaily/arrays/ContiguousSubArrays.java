@@ -2,7 +2,7 @@ package algodaily.arrays;
 
 public class ContiguousSubArrays {
 
-    public static int kadanes(int[] a, int length){
+    private static int kadanes(int[] a, int length){
 
         int maxSum=Integer.MIN_VALUE;
         int currentMax=0;
@@ -22,7 +22,7 @@ public class ContiguousSubArrays {
     }
 
 
-    public static int maxSubArrayDP(int[] a){
+    private static int maxSubArrayDP(int[] a){
 
         int max_so_far = a[0];
         int curr_max = a[0];
